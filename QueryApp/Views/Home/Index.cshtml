@@ -1,0 +1,40 @@
+﻿@model IEnumerable<QueryApp.Models.CountryLanguage>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Language Data</title>
+</head>
+<body>
+
+    @if (Model != null && Model.Any())
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Country Code</th>
+                    <th>Language</th>
+                    <th>Is Official</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CountryCode</td>
+                        <td>@item.Language</td>
+                        <td>@item.IsOfficial</td>
+                        <td>@item.Percentage</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No data available.</p>
+    }
+
+</body>
+</html>
